@@ -1,0 +1,153 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: 'Inter', system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+}
+
+ @media (max-width: 640px) {
+  html {
+    font-size: 14px;
+  }
+}
+
+ ::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #888;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+
+ *:focus {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+ *:focus:not(:focus-visible) {
+  outline: none;
+}
+
+ table {
+  min-width: 640px;
+}
+
+@media (max-width: 768px) {
+  table {
+    min-width: 100%;
+  }
+  
+  .hide-on-mobile {
+    display: none;
+  }
+}
+
+ @keyframes pulse {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+}
+
+.pulse {
+  animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+ .fade-enter {
+  opacity: 0;
+}
+
+.fade-enter-active {
+  opacity: 1;
+  transition: opacity 200ms ease-in;
+}
+
+.fade-exit {
+  opacity: 1;
+}
+
+.fade-exit-active {
+  opacity: 0;
+  transition: opacity 200ms ease-out;
+}
+
+ .hover-lift {
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.hover-lift:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+}
+
+ @keyframes car-float {
+  0%, 100% { transform: translate(-50%, 0); }
+  50% { transform: translate(-50%, -2px); }
+}
+
+.car {
+  animation: car-float 0.8s ease-in-out infinite;
+}
+
+ @keyframes wheel-spin {
+  to { transform: rotate(360deg); }
+}
+
+.wheel {
+  position: absolute;
+  bottom: -6px;
+  height: 14px;
+  width: 14px;
+  background: #111;
+  border-radius: 9999px;
+  animation: wheel-spin 0.4s linear infinite;
+}
+
+.wheel::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  border-radius: 9999px;
+  background: #e5e7eb;
+}
+
+ .glow {
+  box-shadow: 0 0 8px rgba(147, 197, 253, 0.8);
+}
+
+ @keyframes road-move {
+  from { background-position-x: 0; }
+  to { background-position-x: -40px; }
+}
+
+.road-lines {
+  background-image: repeating-linear-gradient(
+    to right,
+    #9ca3af 0px,
+    #9ca3af 12px,
+    transparent 12px,
+    transparent 24px
+  );
+  animation: road-move 0.6s linear infinite;
+}
